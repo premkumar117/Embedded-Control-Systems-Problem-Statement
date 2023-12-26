@@ -8,31 +8,31 @@ system aims to regulate motor speed through closed-loop control,
 allowing for user-specified speed and direction via serial commands.
 2. System Overview
 Block Diagram:
- ┌─────────┐
- │ Host PC │
- └───┬─────┘
- │ Serial Commands
-▼
- ┌─────────┐
- │ ESP32 │
- └──────┬───┘
- │
- ┌─────────────┴─────────────┐
- │ │
- │ ┌─────────┐ │
- │ │ Encoder │ │
- │ └────┬─────┘ │
- │ │ │
- │ Speed Feedback │
- │ │ │
- │ ┌─────────┐ │
- └───────┤ H-Bridge │───────┘
- └────┬─────┘
- │
-▼
- ┌─────────┐
- │ Motor │
- └─────────┘
+             ┌─────────┐
+             │ Host PC │
+             └───┬─────┘
+                 │ Serial Commands
+                 ▼
+             ┌─────────┐
+             │ ESP32   │
+             └──────┬───┘
+                   │
+      ┌─────────────┴─────────────┐
+      │                          │
+      │       ┌─────────┐        │
+      │       │ Encoder │       │
+      │       └────┬─────┘       │
+      │            │             │
+      │       Speed Feedback       │
+      │            │             │
+      │       ┌─────────┐        │
+      └───────┤ H-Bridge │───────┘
+             └────┬─────┘
+                   │
+                   ▼
+             ┌─────────┐
+             │ Motor   │
+             └─────────┘
 Components:
 • Host PC: Sends serial commands to control speed and direction.
 • ESP32: Microcontroller for processing commands and 
